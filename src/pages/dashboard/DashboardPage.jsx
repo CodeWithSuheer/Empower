@@ -8,16 +8,13 @@ const DashboardPage = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsDesktop(window.innerWidth >= 1024); // Example threshold for desktop
+            setIsDesktop(window.innerWidth >= 1024);
         };
 
-        // Initial check
         handleResize();
 
-        // Add event listener to handle resize
         window.addEventListener('resize', handleResize);
 
-        // Cleanup the event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
